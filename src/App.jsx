@@ -42,7 +42,7 @@ function WeatherApp() {
                 className="mt-10 pb-6 text-center"
               >
                 <p className="text-white/15 text-[10px] font-light tracking-wider">
-                  Weather data by OpenWeatherMap <br />
+                  Weather data by OpenWeatherMap using Weather-Fy-Abhi <br />
                   © {new Date().getFullYear()} Weather-Fy. All rights reserved.
                 </p>
                 
