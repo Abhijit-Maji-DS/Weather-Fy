@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #050816;
+  color: #fff;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(59,130,246,0.25), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(30,58,138,0.45), transparent 60%),
+    linear-gradient(180deg, #050816 0%, #0F172A 50%, #0a0f24 100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: rgba(255,255,255,0.02); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(96,165,250,0.4), rgba(37,99,235,0.4));
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(96,165,250,0.7); }
+
+@layer components {
+  .glass {
+    @apply bg-white/[0.06] backdrop-blur-2xl border border-white/10 shadow-glass;
+  }
+  .glass-strong {
+    @apply bg-white/[0.09] backdrop-blur-2xl border border-white/15 shadow-glass;
+  }
+  .glass-card {
+    @apply glass rounded-[32px] relative overflow-hidden;
+  }
+  .glow-text {
+    text-shadow: 0 0 30px rgba(147,197,253,0.6), 0 0 60px rgba(96,165,250,0.3);
+  }
+  .neon-border {
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,0.15),
+      0 0 0 1px rgba(96,165,250,0.15),
+      0 8px 32px rgba(0,0,0,0.37);
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  .perspective-1000 { perspective: 1000px; }
+  .preserve-3d { transform-style: preserve-3d; }
+  .text-balance { text-wrap: balance; }
+}
+
+/* Glass shimmer reflection */
+.shimmer-reflection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255,255,255,0.08) 50%,
+    transparent 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Noise overlay */
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Rain drop SVG path */
+.rain-drop {
+  position: absolute;
+  width: 1px;
+  height: 80px;
+  background: linear-gradient(180deg, transparent, rgba(173,216,230,0.55));
+  border-radius: 999px;
+  filter: blur(0.4px);
+}
+
+/* Lightning */
+.lightning {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.85), transparent 60%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Magnetic button effect */
+.magnetic {
+  transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+/* Glow ring used for hero */
+.hero-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(96,165,250,0.45), rgba(37,99,235,0.15) 40%, transparent 70%);
+  filter: blur(40px);
+}
