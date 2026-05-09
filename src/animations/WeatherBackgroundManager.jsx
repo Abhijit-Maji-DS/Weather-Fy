@@ -48,7 +48,7 @@ export default function WeatherBackgroundManager({ condition, isDay = true }) {
       <div className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.55) 100%)",
+            "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.4) 120%)",
         }}
       />
       <div className="absolute inset-0 pointer-events-none opacity-[0.04] mix-blend-overlay"

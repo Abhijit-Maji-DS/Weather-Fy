@@ -98,18 +98,22 @@ export default function App() {
 
             {/* MIDDLE GRID */}
             <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
-              <div className="lg:col-span-2">
+              <div className="lg:col-span-2 min-w-0">
                 <HourlyForecast hourly={data.hourly} units={units} />
               </div>
-              <AQIRing aqi={data.aqi} />
+              <div className="min-w-0">
+                <AQIRing aqi={data.aqi} />
+              </div>
             </div>
 
             {/* LOWER GRID */}
             <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
-              <div className="lg:col-span-2">
+              <div className="lg:col-span-2 min-w-0">
                 <DailyForecast daily={data.daily} units={units} />
               </div>
-              <SunArc current={data.current} />
+              <div className="min-w-0">
+                <SunArc current={data.current} />
+              </div>
             </div>
 
             {/* INSIGHTS */}

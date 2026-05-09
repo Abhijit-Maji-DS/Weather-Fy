@@ -92,10 +92,10 @@ export default function SearchBar({ onSelect }) {
           )}
           <button
             onClick={useGeo}
-            className="hidden sm:flex items-center gap-1.5 text-xs text-white/70 hover:text-white px-2.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition"
+            className="flex items-center gap-1.5 text-xs text-white/70 hover:text-white px-2.5 py-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition shrink-0"
           >
-            <FiNavigation className="rotate-45" />
-            Locate
+            <FiNavigation className="rotate-45 shrink-0" />
+            <span className="hidden sm:inline">Locate</span>
           </button>
         </div>
       </div>

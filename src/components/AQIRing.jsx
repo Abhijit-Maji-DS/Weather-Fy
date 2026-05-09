@@ -23,7 +23,7 @@ export default function AQIRing({ aqi }) {
       <h3 className="text-sm uppercase tracking-[0.25em] text-white/60 font-medium mb-4">
         Air Quality
       </h3>
-      <div className="flex items-center gap-6">
+      <div className="flex flex-col sm:flex-row items-center gap-6">
         <div className="relative w-[160px] h-[160px] shrink-0">
           <svg className="absolute inset-0 -rotate-90" viewBox="0 0 160 160">
             <defs>
@@ -52,9 +52,9 @@ export default function AQIRing({ aqi }) {
             <div className="text-[10px] uppercase tracking-widest text-white/50 mt-1">US AQI</div>
           </div>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 w-full">
           <div
-            className="text-2xl font-display font-medium"
+            className="text-2xl font-display font-medium text-center sm:text-left"
             style={{ color: info.color, textShadow: `0 0 20px ${info.color}66` }}
           >
             {info.label}

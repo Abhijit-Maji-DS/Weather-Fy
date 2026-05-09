@@ -22,7 +22,7 @@ export default function HourlyForecast({ hourly, units }) {
   }));
 
   return (
-    <GlassCard className="p-6 md:p-8" delay={0.1}>
+    <GlassCard className="p-6 md:p-8 w-full" delay={0.1}>
       <div className="flex items-center justify-between mb-4">
         <h3 className="text-sm uppercase tracking-[0.25em] text-white/60 font-medium">
           Next 24 Hours

@@ -42,19 +42,20 @@ export default function DailyForecast({ daily, units }) {
             >
               <button
                 onClick={() => setOpen(isOpen ? null : i)}
-                className="w-full grid grid-cols-[110px_44px_1fr_120px_24px] items-center gap-3 text-left"
+                className="w-full grid grid-cols-[3fr_2fr_5fr_auto] md:grid-cols-[110px_44px_1fr_120px_24px] items-center gap-2 md:gap-3 text-left"
               >
-                <span className="text-sm md:text-base text-white/85">{day}</span>
-                <WeatherIcon main={d.cond.main} size={36} animated={false} color="#cfe5ff" />
+                <span className="text-sm md:text-base text-white/85 truncate">{day}</span>
+                <div className="flex justify-center">
+                  <WeatherIcon main={d.cond.main} size={36} animated={false} color="#cfe5ff" />
+                </div>
                 <span className="text-xs text-white/50 truncate hidden md:block">
                   {d.cond.desc}
                 </span>
-                <span className="md:hidden" />
-                <div className="flex items-center gap-3">
+                <div className="flex items-center justify-end gap-2 md:gap-3">
                   <span className="text-cyber-300 text-sm w-7 text-right">
                     {Math.round(d.min)}°
                   </span>
-                  <div className="relative h-1.5 w-20 md:w-24 rounded-full bg-white/10 overflow-hidden">
+                  <div className="relative h-1.5 w-16 md:w-24 rounded-full bg-white/10 overflow-hidden hidden sm:block">
                     <div
                       className="absolute top-0 bottom-0 rounded-full bg-gradient-to-r from-cyber-300 via-amber-300 to-rose-400"
                       style={{ left: `${left}%`, width: `${width}%` }}
