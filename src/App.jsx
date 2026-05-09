@@ -25,7 +25,7 @@ export default function App() {
   useEffect(() => {
     let mounted = true;
     const fallback = async () => {
-      const r = await geocodeCity("San Francisco");
+      const r = await geocodeCity("Kolkata");
       if (mounted && r[0]) setPlace(r[0]);
     };
     if (!navigator.geolocation) {
