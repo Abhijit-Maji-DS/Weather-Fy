@@ -1,4 +1,4 @@
-# Weather-Fy · Weather OS
+# Weather-Fy · Weather OS  ---  https://weather-fy-os.vercel.app/
 
 A **next-generation, cinematic, fully animated weather dashboard** built with React + Vite + Tailwind + Framer Motion. Apple Weather × Tesla UI × Linear aesthetic with frosted glassmorphism, dynamic weather backgrounds, and immersive motion design.
 
@@ -18,71 +18,6 @@ A **next-generation, cinematic, fully animated weather dashboard** built with Re
 - 📱 **Fully responsive** — mobile, tablet, ultra-wide desktop. Touch-friendly snap scrolling.
 - 🌐 **No API key required** — uses the free [Open-Meteo](https://open-meteo.com) API for weather + AQI + geocoding.
 
-## 🚀 Getting started
-
-```bash
-npm install
-npm run dev
-```
-
-Open http://localhost:5173
-
-```bash
-npm run build      # production build
-npm run preview    # preview the build
-```
-
-## 🧩 Stack
-
-| Layer | Library |
-|---|---|
-| Framework | React 19 + Vite |
-| Styling | Tailwind CSS 3 (custom keyframes, gradients, shadows) |
-| Motion | Framer Motion + CSS keyframes + Canvas particle systems |
-| State | Zustand |
-| Data | TanStack React Query + Axios |
-| Charts | Recharts |
-| Icons | React Icons (Feather + Weather Icons) |
-| API | Open-Meteo (forecast + AQI + geocoding) |
-
-## 🗂️ Architecture
-
-```
-src/
-├── animations/
-│   ├── WeatherBackgroundManager.jsx   ← orchestrator with smooth transitions
-│   ├── RainBackground.jsx             ← canvas droplets + parallax + wet glass
-│   ├── ThunderBackground.jsx          ← rain + lightning flashes
-│   ├── SunnyBackground.jsx            ← sun core + ray crown + lens flare + heatwave
-│   ├── SnowBackground.jsx             ← canvas snowflakes with depth
-│   ├── NightSky.jsx                   ← stars + shooting stars + moon + aurora
-│   ├── AuroraBackground.jsx           ← animated mesh gradients
-│   ├── CloudyBackground.jsx           ← drifting clouds + ambient particles
-│   ├── FogBackground.jsx              ← layered drifting fog
-│   ├── CloudLayer.jsx                 ← reusable parallax cloud system
-│   ├── LightningEffect.jsx            ← random flash + SVG bolt
-│   └── FloatingParticles.jsx          ← canvas particle engine
-├── api/weather.js                     ← Open-Meteo wrapper, WMO → condition mapping
-├── components/
-│   ├── Header.jsx                     ← logo + search + unit toggle
-│   ├── SearchBar.jsx                  ← debounced + keyboard nav + geo
-│   ├── HeroWeather.jsx                ← animated hero with glow halo
-│   ├── HourlyForecast.jsx             ← Recharts area + snap cards
-│   ├── DailyForecast.jsx              ← 7-day rows w/ range bars + accordion
-│   ├── AQIRing.jsx                    ← animated circular gauge
-│   ├── SunArc.jsx                     ← real-time SVG sun path
-│   ├── StatGrid.jsx                   ← 8 metric tiles, staggered entrance
-│   ├── InsightsAI.jsx                 ← contextual rule-based AI tips
-│   ├── GlassCard.jsx                  ← reusable 3D-tilt glass shell
-│   ├── WeatherIcon.jsx                ← animated weather icons
-│   ├── AnimatedNumber.jsx             ← Framer Motion number counter
-│   ├── CursorGlow.jsx                 ← spring-tracked cursor halo
-│   └── LoadingScreen.jsx              ← orbital loader
-├── store/useWeatherStore.js           ← Zustand: city, units, recents
-├── App.jsx                            ← composition + React Query
-├── main.jsx                           ← QueryClient provider
-└── index.css                          ← Tailwind + custom utilities
-```
 
 ## 🎨 Design system
 
